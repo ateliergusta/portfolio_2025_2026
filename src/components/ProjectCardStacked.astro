@@ -1,0 +1,74 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+  index: number;
+}
+
+const { project, index } = Astro.props;
+---
+
+<div 
+  class="project-card-stacked sticky flex flex-col w-full bg-[#F4F1EA] archive-border mb-8 shadow-sm transition-transform duration-500 ease-out cursor-pointer hover:brightness-95"
+  style={`top: calc(var(--nav-height) + 2rem + ${index * 1}rem); z-index: ${index + 1};`}
+  data-id={project.id}
+  data-project={JSON.stringify(project)}
+>
+  <!-- Card Header -->
+  <div class="flex justify-between items-center p-2 archive-border-b text-xs">
+    <div class="flex items-center gap-2">
+      <span class="px-2 py-0.5 rounded-full border border-black/20">{project.number}</span>
+      <span>ARCHIVE / REF-{project.year}</span>
+    </div>
+    <div class="hidden sm:block">STUDIO ATELIER</div>
+    <div>{project.year}</div>
+  </div>
+
+  <!-- Card Body -->
+  <div class="flex flex-col md:flex-row min-h-[400px]">
+    <!-- Image Section -->
+    <div class="w-full md:w-1/2 p-4 md:archive-border-r relative">
+      <div class="absolute top-6 left-6 text-[10px] bg-black text-white px-2 py-1 z-10">
+        {project.category}
+      </div>
+      <div class="w-full h-full min-h-[300px] overflow-hidden bg-black/5">
+        <img src={project.imageUrl} alt={project.title} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+      </div>
+    </div>
+    
+    <!-- Info Section -->
+    <div class="w-full md:w-1/2 p-6 flex flex-col">
+      <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">{project.title}</h2>
+      
+      <p class="text-sm md:text-base leading-relaxed mb-8 flex-grow">
+        {project.longDesc}
+      </p>
+      
+      <div class="grid grid-cols-2 gap-4 text-xs mb-8">
+        <div>
+          <div class="text-black/50 mb-1">CLIENT</div>
+          <div class="border-b border-black/20 pb-1">{project.client}</div>
+        </div>
+        <div>
+          <div class="text-black/50 mb-1">ANNÉE</div>
+          <div class="border-b border-black/20 pb-1">{project.year}</div>
+        </div>
+        <div>
+          <div class="text-black/50 mb-1">RÔLE</div>
+          <div class="border-b border-black/20 pb-1">{project.role}</div>
+        </div>
+        <div>
+          <div class="text-black/50 mb-1">LIEU</div>
+          <div class="border-b border-black/20 pb-1">{project.location}</div>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap gap-2">
+        {project.tags.map(tag => (
+          <span class="px-2 py-1 archive-border text-[10px]">{tag}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

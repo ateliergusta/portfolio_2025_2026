@@ -1,0 +1,93 @@
+---
+---
+
+<div id="project-modal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center p-4 sm:p-8 md:p-12 pointer-events-none">
+  <!-- Backdrop -->
+  <div id="modal-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-500 pointer-events-auto cursor-pointer"></div>
+  
+  <!-- Modal Content Container -->
+  <div id="modal-content" class="project-modal-card relative w-full h-full bg-[#F4F1EA] flex flex-col opacity-0 transition-opacity duration-700 ease-out overflow-hidden pointer-events-auto">
+    
+    <!-- Modal Header (Sticky) -->
+    <div class="flex justify-between items-center p-3 archive-border-b text-xs bg-[var(--color-paper)]/90 backdrop-blur-sm sticky top-0 z-20">
+      <div class="flex items-center gap-2">
+        <span id="modal-number" class="px-2 py-0.5 rounded-full border border-black/20 text-[10px]">00</span>
+        <span>ARCHIVE / REF-<span id="modal-header-year">0000</span></span>
+      </div>
+      <div class="hidden sm:block">STUDIO ATELIER</div>
+      <button id="close-modal" class="px-3 py-1 bg-black text-white hover:bg-black/80 transition-colors uppercase font-bold text-[10px]">
+        Fermer ✕
+      </button>
+    </div>
+
+    <!-- Modal Scrollable Body -->
+    <div class="flex-grow overflow-y-auto overflow-x-hidden p-0 relative lenis-modal-scroll" data-lenis-prevent>
+      
+      <!-- Top Image Header -->
+      <div class="w-full h-[70vh] min-h-[500px] border-b border-black/10 relative bg-black/5">
+        <div id="modal-category" class="absolute top-6 left-6 text-[10px] bg-black text-white px-2 py-1 z-10">
+          CATEGORY
+        </div>
+        <img id="modal-image" src="" alt="Project Image" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Main Info -->
+      <div class="p-6 md:p-12 max-w-4xl mx-auto">
+        <h2 id="modal-title" class="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-8 leading-none">PROJECT TITLE</h2>
+        
+        <div class="flex flex-col md:flex-row gap-12">
+          <!-- Description -->
+          <div class="md:w-2/3">
+            <p id="modal-desc" class="text-base md:text-lg leading-relaxed text-black/80">
+              Description goes here.
+            </p>
+          </div>
+          
+          <!-- Meta Data -->
+          <div class="md:w-1/3 flex flex-col gap-6 text-xs">
+            <div>
+              <div class="text-black/50 mb-1">CLIENT</div>
+              <div id="modal-client" class="border-b border-black/20 pb-1 font-bold">Client Name</div>
+            </div>
+            <div>
+              <div class="text-black/50 mb-1">ANNÉE</div>
+              <div id="modal-year" class="border-b border-black/20 pb-1 font-bold">2024</div>
+            </div>
+            <div>
+              <div class="text-black/50 mb-1">RÔLE</div>
+              <div id="modal-role" class="border-b border-black/20 pb-1 font-bold">Role</div>
+            </div>
+            <div>
+              <div class="text-black/50 mb-1">LIEU</div>
+              <div id="modal-location" class="border-b border-black/20 pb-1 font-bold">Location</div>
+            </div>
+            
+            <div id="modal-tags" class="flex flex-wrap gap-2 mt-4">
+              <!-- Tags injected here -->
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gallery -->
+        <div id="modal-gallery" class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 pb-12 border-t border-black/10 pt-16">
+          <!-- Gallery images injected here -->
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Optional specific styles for the modal scrollbar */
+  .lenis-modal-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  .lenis-modal-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .lenis-modal-scroll::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+  }
+</style>

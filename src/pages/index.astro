@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCardStacked from '../components/ProjectCardStacked.astro';
+import ProjectCardGrid from '../components/ProjectCardGrid.astro';
+import ProjectModal from '../components/ProjectModal.astro';
+import { projects } from '../data/projects';
+---
+
+<Layout title="Studio Atelier | Archive @2025">
+  <!-- Stacked View Container -->
+  <div id="view-stacked-container" class="w-full flex flex-col pt-8 pb-32">
+    {projects.map((project, index) => (
+      <ProjectCardStacked project={project} index={index} />
+    ))}
+  </div>
+
+  <!-- Grid View Container -->
+  <div id="view-grid-container" class="hidden w-full pt-8 pb-32 transition-opacity duration-500">
+    <div class="flex justify-between items-end border-b border-black/20 pb-4 mb-8">
+      <div>
+        <div class="text-[10px] text-black/50 mb-1">VUE GRILLE - CLIQUEZ POUR OUVRIR</div>
+        <h1 class="text-3xl font-bold tracking-tighter">INDEX DES PROJETS</h1>
+      </div>
+      <div class="text-[10px] text-black/50">{projects.length} fiches</div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {projects.map((project) => (
+        <ProjectCardGrid project={project} />
+      ))}
+    </div>
+  </div>
+
+  <ProjectModal />
+</Layout>
+
+<script>
+  // UI Logic for toggling views and opening modals
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- View Toggle Logic ---
+    const btnStacked = document.getElementById('view-stacked');
+    const btnGrid = document.getElementById('view-grid');
+    const containerStacked = document.getElementById('view-stacked-container');
+    const containerGrid = document.getElementById('view-grid-container');
+    
+    // Default styles for active/inactive buttons
+    const activeClasses = ['bg-white', 'text-black'];
+    const inactiveClasses = ['text-white', 'hover:bg-white/20'];
+    
+    function setView(view: 'stacked' | 'grid') {
+      if (!btnStacked || !btnGrid || !containerStacked || !containerGrid) return;
+      
+      if (view === 'stacked') {
+        // Show stacked, hide grid
+        containerStacked.classList.remove('hidden');
+        containerGrid.classList.add('hidden');
+        
+        // Update buttons
+        btnStacked.classList.add(...activeClasses);
+        btnStacked.classList.remove(...inactiveClasses);
+        btnGrid.classList.add(...inactiveClasses);
+        btnGrid.classList.remove(...activeClasses);
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        // Show grid, hide stacked
+        containerGrid.classList.remove('hidden');
+        containerStacked.classList.add('hidden');
+        
+        // Update buttons
+        btnGrid.classList.add(...activeClasses);
+        btnGrid.classList.remove(...inactiveClasses);
+        btnStacked.classList.add(...inactiveClasses);
+        btnStacked.classList.remove(...activeClasses);
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    btnStacked?.addEventListener('click', () => setView('stacked'));
+    btnGrid?.addEventListener('click', () => setView('grid'));
+    
+    // --- Modal Logic ---
+    const modal = document.getElementById('project-modal');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalContent = document.getElementById('modal-content');
+    const btnClose = document.getElementById('close-modal');
+    
+    // Modal Elements to populate
+    const elNum = document.getElementById('modal-number');
+    const elHeaderYear = document.getElementById('modal-header-year');
+    const elCategory = document.getElementById('modal-category');
+    const elImage = document.getElementById('modal-image') as HTMLImageElement;
+    const elTitle = document.getElementById('modal-title');
+    const elDesc = document.getElementById('modal-desc');
+    const elClient = document.getElementById('modal-client');
+    const elYear = document.getElementById('modal-year');
+    const elRole = document.getElementById('modal-role');
+    const elLocation = document.getElementById('modal-location');
+    const elTags = document.getElementById('modal-tags');
+    
+    function openModal(projectData: any) {
+      if (!modal || !modalBackdrop || !modalContent) return;
+      
+      // Populate Data
+      if (elNum) elNum.textContent = projectData.number;
+      if (elHeaderYear) elHeaderYear.textContent = projectData.year;
+      if (elCategory) elCategory.textContent = projectData.category;
+      if (elImage) elImage.src = projectData.imageUrl;
+      if (elTitle) elTitle.textContent = projectData.title;
+      if (elDesc) elDesc.textContent = projectData.longDesc;
+      if (elClient) elClient.textContent = projectData.client;
+      if (elYear) elYear.textContent = projectData.year;
+      if (elRole) elRole.textContent = projectData.role;
+      if (elLocation) elLocation.textContent = projectData.location;
+      
+      if (elTags) {
+        elTags.innerHTML = '';
+        projectData.tags.forEach((tag: string) => {
+          const span = document.createElement('span');
+          span.className = 'px-2 py-1 archive-border text-[10px] uppercase';
+          span.textContent = tag;
+          elTags.appendChild(span);
+        });
+      }
+      
+      const elGallery = document.getElementById('modal-gallery');
+      if (elGallery) {
+        elGallery.innerHTML = '';
+        if (projectData.galleryImages && projectData.galleryImages.length > 0) {
+          projectData.galleryImages.forEach((imgUrl: string, index: number) => {
+            const imgContainer = document.createElement('div');
+            
+            // Layout editorial: la première image ou 1 sur 3 prend toute la largeur
+            const isFullWidth = index % 3 === 0;
+            imgContainer.className = `w-full bg-black/5 archive-border ${isFullWidth ? 'md:col-span-2' : ''}`;
+            
+            const img = document.createElement('img');
+            img.src = imgUrl;
+            img.className = 'w-full h-auto object-cover block';
+            img.loading = 'lazy';
+            
+            imgContainer.appendChild(img);
+            elGallery.appendChild(imgContainer);
+          });
+        }
+      }
+      
+      // Reset scroll position of modal content
+      const modalScrollContainer = document.querySelector('.lenis-modal-scroll');
+      if (modalScrollContainer) {
+        modalScrollContainer.scrollTop = 0;
+      }
+      
+      // Show Modal
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      
+      // Force reflow for transitions
+      void modal.offsetWidth;
+      
+      // Animate In
+      modalBackdrop.classList.replace('opacity-0', 'opacity-100');
+      modalContent.classList.replace('opacity-0', 'opacity-100');
+      modalContent.classList.replace('scale-95', 'scale-100');
+      
+      // Prevent body scroll (Lenis will ignore the scroll inside the modal thanks to data-lenis-prevent)
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+      if (!modal || !modalBackdrop || !modalContent) return;
+      
+      // Animate Out
+      modalBackdrop.classList.replace('opacity-100', 'opacity-0');
+      modalContent.classList.replace('opacity-100', 'opacity-0');
+      modalContent.classList.replace('scale-100', 'scale-95');
+      
+      // Wait for transition to end before hiding
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }, 500);
+    }
+    
+    // Add click listeners to all project cards (grid and stacked)
+    const projectCards = document.querySelectorAll('.project-card-grid, .project-card-stacked');
+    projectCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        const dataStr = card.getAttribute('data-project');
+        if (dataStr) {
+          try {
+            const data = JSON.parse(dataStr);
+            openModal(data);
+          } catch(err) {
+            console.error("Error parsing project data", err);
+          }
+        }
+      });
+    });
+    
+    btnClose?.addEventListener('click', closeModal);
+    modalBackdrop?.addEventListener('click', closeModal);
+    
+    // Escape key to close modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal?.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  });
+</script>
