@@ -33,6 +33,7 @@ function webpPlugin() {
           const webpPath = fullPath.replace(/\.[^.]+$/, '.webp');
           if (!fs.existsSync(webpPath)) {
             await sharp(fullPath)
+              .rotate()
               .webp({ quality: 80 })
               .toFile(webpPath);
             console.log(`  ✓ ${path.relative(projectRoot, webpPath)}`);
