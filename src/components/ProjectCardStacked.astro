@@ -21,7 +21,6 @@ const { project, index } = Astro.props;
       <span class="px-2 py-0.5 rounded-full border border-black/20">{project.number}</span>
       <span>ARCHIVE / REF-{project.year}</span>
     </div>
-    <div class="hidden sm:block">STUDIO ATELIER</div>
     <div>{project.year}</div>
   </div>
 
@@ -32,8 +31,12 @@ const { project, index } = Astro.props;
       <div class="absolute top-6 left-6 text-[10px] bg-black text-white px-2 py-1 z-10">
         {project.category}
       </div>
-      <div class="w-full h-full min-h-[300px] overflow-hidden bg-black/5">
-        <img src={project.imageUrl} alt={project.title} class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+      <div class={`w-full h-full min-h-[300px] overflow-hidden bg-black/5 ${project.image.portrait ? 'flex justify-center' : ''}`}>
+        <img 
+          src={project.image.src} 
+          alt={project.image.alt} 
+          class={`${project.image.portrait ? 'max-h-full w-auto max-w-[300px]' : 'w-full h-full'} object-cover grayscale hover:grayscale-0 transition-all duration-700`}
+        />
       </div>
     </div>
     

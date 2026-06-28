@@ -1,119 +1,78 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { about } from '../data/about';
 ---
 
-<Layout title="Studio Atelier | À Propos">
+<Layout title="Claire MILLETTI | À Propos">
   <div class="w-full pt-8 pb-32">
     
-    <!-- Header Note -->
     <div class="border-b border-black/20 pb-4 mb-12">
-      <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-tighter">A Note From Studio</h1>
+      <h1 class="text-4xl md:text-6xl font-bold uppercase tracking-tighter">{about.title}</h1>
     </div>
 
-    <!-- Main Grid Content -->
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
       
-      <!-- Photo Column -->
       <div class="md:col-span-4 relative flex justify-center mt-6">
-        
-        <!-- Collage Wrapper -->
         <div class="relative w-full h-[400px] sm:h-[450px] flex justify-center mt-8">
-          
-          <!-- Photo 1 -->
-          <div class="collage-photo absolute top-0 left-0 sm:left-4 w-40 bg-white p-2 pb-8 shadow-md transform -rotate-6 hover:rotate-0 hover:z-50 hover:scale-110 transition-transform duration-300 archive-border z-10 cursor-pointer">
-            <!-- Tape -->
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 bg-red-600 shadow-sm z-10 transform rotate-[-3deg] opacity-90 flex items-center justify-center overflow-hidden">
-              <div class="w-full h-px bg-black/10 absolute top-1/2 transform -rotate-6"></div>
-            </div>
-            <img src="/fictional-portrait.png" alt="Portrait Studio" class="w-full h-auto aspect-[3/4] object-cover filter grayscale sepia-[0.2]" />
-            <div class="absolute bottom-2 left-0 w-full text-center text-[8px] text-black/50">
-              FIG. 1
-            </div>
-          </div>
-
-          <!-- Photo 2 -->
-          <div class="collage-photo absolute top-20 right-0 sm:right-4 w-44 bg-white p-2 pb-8 shadow-md transform rotate-3 hover:rotate-0 hover:z-50 hover:scale-110 transition-transform duration-300 archive-border z-20 cursor-pointer">
-            <!-- Tape -->
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 bg-red-600 shadow-sm z-10 transform rotate-[4deg] opacity-90 flex items-center justify-center overflow-hidden">
-              <div class="w-full h-px bg-black/10 absolute top-1/2 transform -rotate-2"></div>
-            </div>
-            <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=400&auto=format&fit=crop" alt="Detail 1" class="w-full h-auto aspect-square object-cover filter grayscale sepia-[0.1]" />
-            <div class="absolute bottom-2 left-0 w-full text-center text-[8px] text-black/50">
-              FIG. 2
-            </div>
-          </div>
-
-          <!-- Photo 3 -->
-          <div class="collage-photo absolute top-40 left-8 sm:left-12 w-48 bg-white p-2 pb-8 shadow-md transform -rotate-2 hover:rotate-0 hover:z-50 hover:scale-110 transition-transform duration-300 archive-border z-30 cursor-pointer">
-            <!-- Tape -->
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 bg-red-600 shadow-sm z-10 transform rotate-[-1deg] opacity-90 flex items-center justify-center overflow-hidden">
-              <div class="w-full h-px bg-black/10 absolute top-1/2 transform rotate-3"></div>
-            </div>
-            <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=400&auto=format&fit=crop" alt="Detail 2" class="w-full h-auto aspect-[4/3] object-cover filter grayscale" />
-            <div class="absolute bottom-2 left-0 w-full text-center text-[8px] text-black/50">
-              FIG. 3
-            </div>
-          </div>
-
+          {about.photos.map((photo, i) => {
+            const positions = [
+              "top-0 left-0 sm:left-4 w-40 rotate-[-6deg] aspect-[3/4] z-10",
+              "top-20 right-0 sm:right-4 w-44 rotate-[3deg] aspect-square z-20",
+              "top-40 left-8 sm:left-12 w-48 rotate-[-2deg] aspect-[4/3] z-30"
+            ];
+            const tapeRotations = ["-3deg", "4deg", "-1deg"];
+            
+            return (
+              <div class={`collage-photo absolute ${positions[i]} bg-white p-2 pb-8 shadow-md transform hover:rotate-0 hover:z-50 hover:scale-110 transition-transform duration-300 archive-border cursor-pointer`}>
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 bg-red-600 shadow-sm z-10 transform rotate-[{tapeRotations[i]}] opacity-90 flex items-center justify-center overflow-hidden">
+                  <div class="w-full h-px bg-black/10 absolute top-1/2 transform -rotate-6"></div>
+                </div>
+                <img src={photo.src} alt={photo.alt} class="w-full h-auto object-cover filter grayscale sepia-[0.1] hover:grayscale-0 hover:sepia-0 transition-all duration-500" />
+                <div class="absolute bottom-2 left-0 w-full text-center text-[8px] text-black/50">
+                  {photo.fig}
+                </div>
+              </div>
+            );
+          })}
         </div>
-
       </div>
 
-      <!-- Text Content Column -->
       <div class="md:col-span-8 flex flex-col gap-8 md:gap-16">
         
-        <!-- Bio Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm leading-relaxed text-black/80">
           <div>
             <p class="mb-4">
-              Studio Atelier est un studio de création indépendant spécialisé dans l'identité visuelle, le design éditorial et le développement d'expériences numériques immersives.
+              {about.bio[0]}
             </p>
             <p>
-              Avec une approche ancrée dans les principes de l'architecture brutaliste et de l'esthétique d'archives, le studio s'efforce de créer des designs intemporels où le fond dicte la forme.
+              {about.bio[1]}
             </p>
           </div>
           <div>
             <p class="mb-4">
-              Chaque projet est traité comme un objet d'archive : documenté, structuré et conçu pour perdurer. Nous croyons en la force du minimalisme, où chaque trait et chaque espace blanc a sa raison d'être.
+              {about.bio[2]}
             </p>
             <p>
-              Nous trouvons notre joie à l'intersection de la culture imprimée physique et de l'innovation numérique moderne.
+              {about.bio[3]}
             </p>
           </div>
         </div>
 
-        <!-- Resources / Expertise Section -->
         <div>
           <div class="border-b border-black/20 pb-2 mb-6">
-            <h2 class="text-2xl font-bold uppercase tracking-tighter">Expertises</h2>
+            <h2 class="text-2xl font-bold uppercase tracking-tighter">{about.expertiseTitle}</h2>
           </div>
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
-            
-            <div class="flex flex-col gap-2">
-              <div class="text-[10px] text-black/50 border-b border-black/10 pb-1">01. DESIGN</div>
-              <h3 class="font-bold">Identité Visuelle</h3>
-              <p class="text-xs text-black/70 mt-2">
-                Création de systèmes visuels complets, logotypes, charte graphique et direction artistique globale pour marques et institutions.
-              </p>
-            </div>
-            
-            <div class="flex flex-col gap-2">
-              <div class="text-[10px] text-black/50 border-b border-black/10 pb-1">02. DIGITAL</div>
-              <h3 class="font-bold">Web Design & Dev</h3>
-              <p class="text-xs text-black/70 mt-2">
-                Conception et développement sur-mesure d'applications web et de portfolios, avec une attention particulière aux micro-interactions.
-              </p>
-            </div>
-            
-            <div class="flex flex-col gap-2">
-              <div class="text-[10px] text-black/50 border-b border-black/10 pb-1">03. PRINT</div>
-              <h3 class="font-bold">Éditorial</h3>
-              <p class="text-xs text-black/70 mt-2">
-                Mise en page, conception d'ouvrages, affiches et sérigraphie. Le travail de la grille typographique au service de la lecture.
-              </p>
-            </div>
-
+            {about.expertises.map((exp) => (
+              <div class="flex flex-col gap-2">
+                <div class="text-[10px] text-black/50 border-b border-black/10 pb-1">{exp.number}. {exp.category}</div>
+                <h3 class="font-bold">{exp.title}</h3>
+                <p class="text-xs text-black/70 mt-2">
+                  {exp.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 

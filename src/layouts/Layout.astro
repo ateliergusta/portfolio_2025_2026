@@ -5,7 +5,7 @@ interface Props {
 	title?: string;
 }
 
-const { title = "Studio Atelier | Archive" } = Astro.props;
+const { title = "Claire MILLETTI | Archive" } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,12 +23,12 @@ const { title = "Studio Atelier | Archive" } = Astro.props;
 		<header class="fixed top-0 left-0 w-full h-[var(--nav-height)] px-4 flex items-center justify-between z-50 mix-blend-difference text-white/90 archive-border-b bg-[var(--color-paper)]/10 backdrop-blur-sm">
 			<div class="flex items-center gap-2">
 				<span class="w-2 h-2 rounded-full bg-red-600 block"></span>
-				<span class="font-bold">STUDIO ATELIER</span>
+				<span class="font-bold">Claire MILLETTI</span>
 			</div>
 			<nav class="hidden md:flex gap-8">
 				<a href="/" class="hover:underline">Travaux</a>
 				<a href="/a-propos" class="hover:underline">À Propos</a>
-				<a href="mailto:bonjour@studio.fr" class="hover:underline">Contact</a>
+				<a href="/contact" class="hover:underline">Contact</a>
 			</nav>
 			<div>
 				ARCHIVE &copy;2025
@@ -53,7 +53,7 @@ const { title = "Studio Atelier | Archive" } = Astro.props;
 				</button>
 			</div>
 			
-			<div>BONJOUR@STUDIO.FR</div>
+			<div>clairemilletti@gmail.com</div>
 		</footer>
 
 		<script>

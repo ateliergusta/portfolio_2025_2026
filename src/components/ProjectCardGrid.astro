@@ -20,8 +20,8 @@ const { project } = Astro.props;
     
     <div class="w-full h-full overflow-hidden bg-black/5 relative group-hover:bg-transparent transition-colors">
       <img 
-        src={project.imageUrl} 
-        alt={project.title} 
+        src={project.image.src} 
+        alt={project.image.alt} 
         class="w-full h-full object-cover filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" 
       />
     </div>

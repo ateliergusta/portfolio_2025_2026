@@ -14,7 +14,6 @@
         <span id="modal-number" class="px-2 py-0.5 rounded-full border border-black/20 text-[10px]">00</span>
         <span>ARCHIVE / REF-<span id="modal-header-year">0000</span></span>
       </div>
-      <div class="hidden sm:block">STUDIO ATELIER</div>
       <button id="close-modal" class="px-3 py-1 bg-black text-white hover:bg-black/80 transition-colors uppercase font-bold text-[10px]">
         Fermer ✕
       </button>
@@ -24,11 +23,12 @@
     <div class="flex-grow overflow-y-auto overflow-x-hidden p-0 relative lenis-modal-scroll" data-lenis-prevent>
       
       <!-- Top Image Header -->
-      <div class="w-full h-[70vh] min-h-[500px] border-b border-black/10 relative bg-black/5">
+      <div id="modal-image-container" class="w-full h-[50vh] min-h-[400px] border-b border-black/10 relative bg-black/5 flex justify-center overflow-hidden">
         <div id="modal-category" class="absolute top-6 left-6 text-[10px] bg-black text-white px-2 py-1 z-10">
           CATEGORY
         </div>
-        <img id="modal-image" src="" alt="Project Image" class="w-full h-full object-cover" />
+        <img id="modal-image" src="" alt="Project Image" class="w-full h-full object-cover object-top" />
+        <video id="modal-video" src="" class="hidden w-full h-full object-cover object-top" muted loop playsinline></video>
       </div>
 
       <!-- Main Info -->
