@@ -56,11 +56,11 @@ export const projects: Project[] = [
     shortDesc: 'Magazine marseillais populaire à but touristique.',
     longDesc: 'Un travail autour de la création de visuels dynamiques et colorés qui mettent en avant la ville de Marseille et entraine le lecteur à l\'aventure.',
     tags: ['PRINT', 'Design', 'AI'],
-    image: { src: '/projects/Tarpin/mockup tarpin.webp', alt: 'Tarpin mockup couverture' },
+    image: { src: '/projects/Tarpin/mockup-tarpin.webp', alt: 'Tarpin mockup couverture' },
     gallery: [
-      { src: '/projects/Tarpin/Capture d’écran 2026-06-28 à 16.54.15.webp', alt: 'Tarpin page intérieure 1' },
-      { src: '/projects/Tarpin/couv Papi.webp', alt: 'Tarpin couverture Papi' },
-      { src: '/projects/Tarpin/Page 12-1.webp', alt: 'Tarpin page 12' }
+      { src: '/projects/Tarpin/Capture-d-ecran-2026-06-28-16h54.webp', alt: 'Tarpin page intérieure 1' },
+      { src: '/projects/Tarpin/couv-Papi.webp', alt: 'Tarpin couverture Papi' },
+      { src: '/projects/Tarpin/Page-12-1.webp', alt: 'Tarpin page 12' }
     ],
     color: '#2A2A2A'
   },
