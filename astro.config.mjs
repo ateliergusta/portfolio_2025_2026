@@ -30,7 +30,7 @@ function webpPlugin() {
       } else {
         const ext = path.extname(entry.name).toLowerCase();
         if (extensions.includes(ext) && !entry.name.endsWith('.webp') && !entry.name.endsWith('.avif')) {
-          const webpPath = fullPath.replace(ext, '.webp');
+          const webpPath = fullPath.replace(/\.[^.]+$/, '.webp');
           if (!fs.existsSync(webpPath)) {
             await sharp(fullPath)
               .webp({ quality: 80 })
