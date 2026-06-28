@@ -48,8 +48,8 @@ export const about: AboutData = {
     }
   ],
   photos: [
-    { src: "/about/fig1.JPG", alt: "Portrait", fig: "FIG. 1" },
-    { src: "/about/fig2.jpg", alt: "Detail 1", fig: "FIG. 2" },
-    { src: "/about/fig3.jpg", alt: "Detail 2", fig: "FIG. 3" }
+    { src: "/about/fig1.webp", alt: "Portrait", fig: "FIG. 1" },
+    { src: "/about/fig2.webp", alt: "Detail 1", fig: "FIG. 2" },
+    { src: "/about/fig3.webp", alt: "Detail 2", fig: "FIG. 3" }
   ]
 };

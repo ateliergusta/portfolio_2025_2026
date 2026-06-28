@@ -36,11 +36,11 @@ export const projects: Project[] = [
     shortDesc: 'Création des trois couvertures aux styles graphiques divers.',
     longDesc: 'Appropriation et création des trois visuels graphiques pour une couverture de livre tout en respectant des concepts graphiques tels que le minimalisme, le swiss design et le maximalisme.',
     tags: ['Design', 'PR', 'ART'],
-    image: { src: '/projects/Haikus/1.jpg', alt: 'Couverture principale Haikus en fleurs' },
+    image: { src: '/projects/Haikus/1.webp', alt: 'Couverture principale Haikus en fleurs' },
     gallery: [
-      { src: '/projects/Haikus/Haikus en fleurs covers4.jpg', alt: 'Couverture minimaliste Haikus en fleurs' },
-      { src: '/projects/Haikus/Haikus en fleurs covers.jpg', alt: 'Couverture Haikus en fleurs' },
-      { src: '/projects/Haikus/maximalism front 2.png', alt: 'Couverture maximaliste Haikus en fleurs' }
+      { src: '/projects/Haikus/Haikus en fleurs covers4.webp', alt: 'Couverture minimaliste Haikus en fleurs' },
+      { src: '/projects/Haikus/Haikus en fleurs covers.webp', alt: 'Couverture Haikus en fleurs' },
+      { src: '/projects/Haikus/maximalism front 2.webp', alt: 'Couverture maximaliste Haikus en fleurs' }
     ],
     color: '#D85A3A'
   },
@@ -56,11 +56,11 @@ export const projects: Project[] = [
     shortDesc: 'Magazine marseillais populaire à but touristique.',
     longDesc: 'Un travail autour de la création de visuels dynamiques et colorés qui mettent en avant la ville de Marseille et entraine le lecteur à l\'aventure.',
     tags: ['PRINT', 'Design', 'AI'],
-    image: { src: '/projects/Tarpin/mockup tarpin.png', alt: 'Tarpin mockup couverture' },
+    image: { src: '/projects/Tarpin/mockup tarpin.webp', alt: 'Tarpin mockup couverture' },
     gallery: [
-      { src: '/projects/Tarpin/Capture d’écran 2026-06-28 à 16.54.15.png', alt: 'Tarpin page intérieure 1' },
-      { src: '/projects/Tarpin/couv Papi.png', alt: 'Tarpin couverture Papi' },
-      { src: '/projects/Tarpin/Page 12-1.png', alt: 'Tarpin page 12' }
+      { src: '/projects/Tarpin/Capture d’écran 2026-06-28 à 16.54.15.webp', alt: 'Tarpin page intérieure 1' },
+      { src: '/projects/Tarpin/couv Papi.webp', alt: 'Tarpin couverture Papi' },
+      { src: '/projects/Tarpin/Page 12-1.webp', alt: 'Tarpin page 12' }
     ],
     color: '#2A2A2A'
   },
@@ -76,11 +76,11 @@ export const projects: Project[] = [
     shortDesc: 'Conception édiatoriale d \'une revue trimestrielle. ',
     longDesc: 'Création d\'un magazine autour de l\'univers canin et de sa culture. Plusieurs numéro sont en production avec des visuels colorés et impactants.',
     tags: ['DOG', 'PRINT', 'ÉDITION'],
-    image: { src: '/projects/Bastard/bastard couv 2_.png', alt: 'Bastard couverture 2' },
+    image: { src: '/projects/Bastard/bastard couv 2_.webp', alt: 'Bastard couverture 2' },
     gallery: [
-      { src: '/projects/Bastard/poster san.png', alt: 'Bastard poster' },
-      { src: '/projects/Bastard/cover 3.png', alt: 'Bastard couverture 3' },
-      { src: '/projects/Bastard/magazine int.png', alt: 'Bastard page intérieure' }
+      { src: '/projects/Bastard/poster san.webp', alt: 'Bastard poster' },
+      { src: '/projects/Bastard/cover 3.webp', alt: 'Bastard couverture 3' },
+      { src: '/projects/Bastard/magazine int.webp', alt: 'Bastard page intérieure' }
     ],
     color: '#8B4513'
   },
@@ -96,10 +96,10 @@ export const projects: Project[] = [
     shortDesc: 'Création d\'une identité visuelle pour une marque de bébé.',
     longDesc: 'Confection d\'une identité globale axée sur une mascotte colorée et un univers qui casse les codes classiques du secteur des bébés.',
     tags: ['BRAND', 'ILLU', 'IDENT'],
-    image: { src: '/projects/Pt-ecrevisse/couche.png', alt: 'Point d\'écrevisse couche' },
+    image: { src: '/projects/Pt-ecrevisse/couche.webp', alt: 'Point d\'écrevisse couche' },
     gallery: [
-      { src: '/projects/Pt-ecrevisse/poster.png', alt: 'Point d\'écrevisse poster' },
-      { src: '/projects/Pt-ecrevisse/porte bb.png', alt: 'Point d\'écrevisse porte bébé' }
+      { src: '/projects/Pt-ecrevisse/poster.webp', alt: 'Point d\'écrevisse poster' },
+      { src: '/projects/Pt-ecrevisse/porte bb.webp', alt: 'Point d\'écrevisse porte bébé' }
     ],
     color: '#000000'
   },
@@ -115,12 +115,12 @@ export const projects: Project[] = [
     shortDesc: 'Direction artistique d\'un festival fictif à Berlin.',
     longDesc: 'Création d\'une identité globale d/\'un festival alternatif basé à Berlin sur plusieurs jours. Un langage visuel basé sur des visuels forts et overprintés.',
     tags: ['BRAND', 'LOGO', 'IDENT'],
-    image: { src: '/projects/Berlinade/Affiche-Berlinade.png', alt: 'Berlinade affiche' },
+    image: { src: '/projects/Berlinade/Affiche-Berlinade.webp', alt: 'Berlinade affiche' },
     gallery: [
-      { src: '/projects/Berlinade/bracelets.png', alt: 'Berlinade bracelets' },
-      { src: '/projects/Berlinade/poster-affiches.png', alt: 'Berlinade poster affiches' },
-      { src: '/projects/Berlinade/programme-verso-mockup2.png', alt: 'Berlinade programme verso' },
-      { src: '/projects/Berlinade/plan-festival.png', alt: 'Berlinade plan festival' }
+      { src: '/projects/Berlinade/bracelets.webp', alt: 'Berlinade bracelets' },
+      { src: '/projects/Berlinade/poster-affiches.webp', alt: 'Berlinade poster affiches' },
+      { src: '/projects/Berlinade/programme-verso-mockup2.webp', alt: 'Berlinade programme verso' },
+      { src: '/projects/Berlinade/plan-festival.webp', alt: 'Berlinade plan festival' }
     ],
     color: '#B03A2E'
   },
@@ -136,21 +136,21 @@ export const projects: Project[] = [
     shortDesc: 'Réalisation d\'une série de photo d\'architecture et de voyage.',
     longDesc: 'Chaque photo a été réalisé à l\’argentique avec différents boitiers et différentes pellicules.',
     tags: ['PHOTO', 'ARGENTIQUE'],
-    image: { src: '/projects/revue-argentique/1-nb.jpeg', alt: 'Archives argentiques - photographie noir et blanc' },
+    image: { src: '/projects/revue-argentique/1-nb.webp', alt: 'Archives argentiques - photographie noir et blanc' },
     gallery: [
-      { src: '/projects/revue-argentique/1-nb.jpeg', alt: 'Photographie NB 1' },
-      { src: '/projects/revue-argentique/2-nb.jpg', alt: 'Photographie NB 2' },
-      { src: '/projects/revue-argentique/3-nb.jpg', alt: 'Photographie NB 3' },
-      { src: '/projects/revue-argentique/4-nb.jpg', alt: 'Photographie NB 4' },
-      { src: '/projects/revue-argentique/5-nb.jpg', alt: 'Photographie NB 5' },
-      { src: '/projects/revue-argentique/6-nb.jpg', alt: 'Photographie NB 6' },
-      { src: '/projects/revue-argentique/7-nb.jpg', alt: 'Photographie NB 7' },
-      { src: '/projects/revue-argentique/1-color.jpeg', alt: 'Photographie couleur 1' },
-      { src: '/projects/revue-argentique/2-color.jpg', alt: 'Photographie couleur 2' },
-      { src: '/projects/revue-argentique/3-color.jpg', alt: 'Photographie couleur 3' },
-      { src: '/projects/revue-argentique/4-color.jpg', alt: 'Photographie couleur 4' },
-      { src: '/projects/revue-argentique/5-color.jpg', alt: 'Photographie couleur 5' },
-      { src: '/projects/revue-argentique/6-color.jpeg', alt: 'Photographie couleur 6' }
+      { src: '/projects/revue-argentique/1-nb.webp', alt: 'Photographie NB 1' },
+      { src: '/projects/revue-argentique/2-nb.webp', alt: 'Photographie NB 2' },
+      { src: '/projects/revue-argentique/3-nb.webp', alt: 'Photographie NB 3' },
+      { src: '/projects/revue-argentique/4-nb.webp', alt: 'Photographie NB 4' },
+      { src: '/projects/revue-argentique/5-nb.webp', alt: 'Photographie NB 5' },
+      { src: '/projects/revue-argentique/6-nb.webp', alt: 'Photographie NB 6' },
+      { src: '/projects/revue-argentique/7-nb.webp', alt: 'Photographie NB 7' },
+      { src: '/projects/revue-argentique/1-color.webp', alt: 'Photographie couleur 1' },
+      { src: '/projects/revue-argentique/2-color.webp', alt: 'Photographie couleur 2' },
+      { src: '/projects/revue-argentique/3-color.webp', alt: 'Photographie couleur 3' },
+      { src: '/projects/revue-argentique/4-color.webp', alt: 'Photographie couleur 4' },
+      { src: '/projects/revue-argentique/5-color.webp', alt: 'Photographie couleur 5' },
+      { src: '/projects/revue-argentique/6-color.webp', alt: 'Photographie couleur 6' }
     ],
     color: '#333333'
   },
@@ -166,12 +166,12 @@ export const projects: Project[] = [
     shortDesc: 'Conception d\'un logo pour un restaurant.',
     longDesc: 'Création d\'un logo pour un restaurant qui propose une expérience salle d\'arcade et de jeux tradi.',
     tags: ['BRANDING', 'LOGO', 'SCÉNOGRAPHIE'],
-    image: { src: '/projects/sync/signboard.png', alt: 'SYNC enseigne', videoSrc: '/projects/sync/comp-1-3.mp4' },
+    image: { src: '/projects/sync/signboard.webp', alt: 'SYNC enseigne', videoSrc: '/projects/sync/comp-1-3.mp4' },
     gallery: [
-      { src: '/projects/sync/mockup-resto.png', alt: 'SYNC mockup restaurant' },
-      { src: '/projects/sync/sac-papier-rose.png', alt: 'SYNC sac papier' },
-      { src: '/projects/sync/logo-2.png', alt: 'SYNC logo' },
-      { src: '/projects/sync/etiquette-sync.png', alt: 'SYNC étiquette' }
+      { src: '/projects/sync/mockup-resto.webp', alt: 'SYNC mockup restaurant' },
+      { src: '/projects/sync/sac-papier-rose.webp', alt: 'SYNC sac papier' },
+      { src: '/projects/sync/logo-2.webp', alt: 'SYNC logo' },
+      { src: '/projects/sync/etiquette-sync.webp', alt: 'SYNC étiquette' }
     ],
     color: '#D35400'
   },
@@ -187,13 +187,13 @@ export const projects: Project[] = [
     shortDesc: 'Packaging pour un parfum Fragonnard.',
     longDesc: 'Création d\'un packaging basé sur un puissant storytelling pour la marque de parfum Fragonnard.',
     tags: ['PACKAGING', 'ARTISANAT', 'ILLU'],
-    image: { src: '/projects/pietra/visuel-packaging-fonce.png', alt: 'Pietra visuel packaging' },
+    image: { src: '/projects/pietra/visuel-packaging-fonce.webp', alt: 'Pietra visuel packaging' },
     gallery: [
-      { src: '/projects/pietra/pietra-mise-en-page.png', alt: 'Pietra mise en page', fill: true },
-      { src: '/projects/pietra/R0000693.JPG', alt: 'Pietra photographie 1' },
-      { src: '/projects/pietra/R0000703.JPG', alt: 'Pietra photographie 2' },
-      { src: '/projects/pietra/R0000711.JPG', alt: 'Pietra photographie 3' },
-      { src: '/projects/pietra/img1653470239227.jpg', alt: 'Pietra photographie 4' }
+      { src: '/projects/pietra/pietra-mise-en-page.webp', alt: 'Pietra mise en page', fill: true },
+      { src: '/projects/pietra/R0000693.webp', alt: 'Pietra photographie 1' },
+      { src: '/projects/pietra/R0000703.webp', alt: 'Pietra photographie 2' },
+      { src: '/projects/pietra/R0000711.webp', alt: 'Pietra photographie 3' },
+      { src: '/projects/pietra/img1653470239227.webp', alt: 'Pietra photographie 4' }
     ],
     color: '#C0392B'
   }
