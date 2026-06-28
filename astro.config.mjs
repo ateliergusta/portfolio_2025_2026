@@ -5,6 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 
+import cloudflare from '@astrojs/cloudflare';
+
 const imageExtensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG'];
 
 function webpPlugin() {
@@ -65,5 +67,7 @@ function webpPlugin() {
 export default defineConfig({
   vite: {
     plugins: [tailwindcss(), webpPlugin()]
-  }
+  },
+
+  adapter: cloudflare()
 });
