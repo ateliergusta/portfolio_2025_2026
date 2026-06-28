@@ -5,7 +5,7 @@ import ContactCard from '../components/ContactCard.astro';
 
 <Layout title="Claire MILLETTI | Contact">
   <section class="relative h-[calc(100vh-var(--nav-height)*2)] -mt-[calc(var(--nav-height)+2rem)]">
-    <img src="/contact-bg.webp" alt="" class="absolute inset-0 w-full h-full object-cover" />
+    <img src="/contact-bg.webp" alt="" decoding="async" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover" />
     <div class="absolute inset-0 flex items-center justify-center p-4 md:p-8">
       <ContactCard />
     </div>

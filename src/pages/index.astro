@@ -160,6 +160,7 @@ import { projects } from '../data/projects';
               ? 'w-full h-full object-cover block'
               : 'w-full h-auto object-contain block';
             img.loading = 'lazy';
+            img.decoding = 'async';
             
             imgContainer.appendChild(img);
             elGallery.appendChild(imgContainer);

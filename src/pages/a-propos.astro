@@ -27,7 +27,7 @@ import { about } from '../data/about';
                 <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 bg-red-600 shadow-sm z-10 transform rotate-[{tapeRotations[i]}] opacity-90 flex items-center justify-center overflow-hidden">
                   <div class="w-full h-px bg-black/10 absolute top-1/2 transform -rotate-6"></div>
                 </div>
-                <img src={photo.src} alt={photo.alt} class="w-full h-auto object-cover filter grayscale sepia-[0.1] hover:grayscale-0 hover:sepia-0 transition-all duration-500" />
+                <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" class="w-full h-auto object-cover filter grayscale sepia-[0.1] hover:grayscale-0 hover:sepia-0 transition-all duration-500" />
                 <div class="absolute bottom-2 left-0 w-full text-center text-[8px] text-black/50">
                   {photo.fig}
                 </div>

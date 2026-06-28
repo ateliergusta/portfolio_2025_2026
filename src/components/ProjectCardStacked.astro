@@ -35,6 +35,8 @@ const { project, index } = Astro.props;
         <img 
           src={project.image.src} 
           alt={project.image.alt} 
+          loading="lazy"
+          decoding="async"
           class={`${project.image.portrait ? 'max-h-full w-auto max-w-[300px]' : 'w-full h-full'} object-cover grayscale hover:grayscale-0 transition-all duration-700`}
         />
       </div>
